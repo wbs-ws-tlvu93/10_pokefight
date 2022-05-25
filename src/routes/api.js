@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import pokemonRouter from './pokemon-route';
+import pokemonRouter from './pokemon-route.js';
 
 // Export base-router
 const baseRouter = Router();

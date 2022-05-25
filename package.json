@@ -2,9 +2,11 @@
   "name": "10_pokefight",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon node --experimental-modules --es-module-specifier-resolution=node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +21,11 @@
   },
   "homepage": "https://github.com/wbs-ws-tlvu93/10_pokefight#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
   }
 }
