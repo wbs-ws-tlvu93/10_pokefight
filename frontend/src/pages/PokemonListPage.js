@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import GameboyLayout from '../layout/GameboyLayout';
 
 function PokemonListPage() {
   const [pokemonList, setPokemonList] = useState([]);
 
-  // console.log(Object.keys(pokemonList).length);
-  // console.log(pokemonList);
   useEffect(() => {
     fetch('https://wbs-pokemon-api.herokuapp.com/api/pokemon')
       .then((response) => response.json())
@@ -13,19 +12,21 @@ function PokemonListPage() {
   }, []);
 
   return (
-    <div>
-      PokemonListPage
-      {pokemonList &&
-        pokemonList.map((pokemon) => {
-          console.log(pokemon);
-          return (
-            <div>
-              {pokemon.name.english} |{pokemon.type[0]} |{pokemon.base.HP}
-            </div>
-          );
-        })}
-      <Outlet />
-    </div>
+    <GameboyLayout>
+      <div>
+        PokemonListPage
+        {pokemonList &&
+          pokemonList.map((pokemon) => {
+            console.log(pokemon);
+            return (
+              <div>
+                {pokemon.name.english} |{pokemon.type[0]} |{pokemon.base.HP}
+              </div>
+            );
+          })}
+        <Outlet />
+      </div>
+    </GameboyLayout>
   );
 }
 

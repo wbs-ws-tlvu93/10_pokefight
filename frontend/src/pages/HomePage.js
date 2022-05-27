@@ -1,10 +1,11 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import GameboyLayout from '../layout/GameboyLayout';
 
 function HomePage() {
   return (
     <div>
-      HomePage
+      <GameboyLayout></GameboyLayout>
       <Outlet />
     </div>
   );
